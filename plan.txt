@@ -1,0 +1,47 @@
+Provide list of words for user to solve 
+    array to store list of words
+    check what letters have guessed
+    letters that are wrong
+    letters that are correct
+
+    init three arrays
+    function that takes input from user
+        process input and make app smoother
+        check for characters
+    used letter array // append wrong letters
+    used letter array // append right letter
+    check word is equal to number of letters 
+    if length of array is equal to 7 game over
+
+# empty array for lettersGuessed
+# empty array for 'mystery word' // set limit on number of letters in word
+# array of lives (7 tries)
+
+
+
+# randomly generate word // limit of 7 letters
+# prompt user to input letter guess
+        
+# function to ask player to input letter --> 'guess'
+# if/else to check guess is incorrect or not
+        # if '' is True:
+        # store letter in mysteryWord array
+        # print "Correct Guess: Keep Going!"   
+        # print mysteryWord array
+
+
+        # put correct letter in all spaces that match
+        # move letter to lettersGuessed array
+    # if guess is incorrect, draw something // move letter to lettersGuessed array
+        # if '' is False:
+            # removeLife()
+            # draw Spaceman (/7) 
+            # store letter in lettersGuessed
+            # print "Guess Incorrect: Keep Trying!"
+            # print mysteryWord array
+
+    # if player guesses wrong 7 times the game is over
+    # if player completes word in under 7 tries, they win game
+
+    # python GUI
+    
