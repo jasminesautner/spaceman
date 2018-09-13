@@ -22,12 +22,20 @@ word = word.upper()
 
 # checking letter that user has guessed 
 def validate(x):
-    count = 0
-    for index in word:
-        if index == x:
-            blanks[count] = x
-            blanks.append(x)
-            count += 1
+    for index, value in enumerate(word):
+        if value == x:
+            blanks[index] = x
+    #print(blanks)
+
+# recieves user input and capitalizes it, then calls validate function
+def process_input():
+
+    x = input('Enter a letter:\n')
+    x = x.upper()
+    print(right_letters)
+    print(used_letters)
+    print(blanks)
+    validate(x)
 
     # checking if letter has been previously guessed
     if x in used_letters:
@@ -48,17 +56,7 @@ def validate(x):
         used_letters.append(x)
         is_wrong()
         process_input()
-
-# recieves user input and capitalizes it, then calls validate function
-def process_input():
-
-    x = input('Enter a letter:\n')
-    x = x.upper()
-    print(right_letters)
-    print(used_letters)
-    print(blanks)
-    validate(x)
-
+    
 # checks length of correct letters guessed with length of mysterword then prints win statement and exits game
 def is_right():
 
@@ -73,6 +71,3 @@ def is_wrong():
         exit()
 
 process_input()
-
-
-
