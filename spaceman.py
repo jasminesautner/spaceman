@@ -22,12 +22,17 @@ word = word.upper()
 
 # checking letter that user has guessed 
 def validate(x):
+    count = 0
+    for index in word:
+        if index == x:
+            blanks[count] = x
+            blanks.append(x)
+            count += 1
 
     # checking if letter has been previously guessed
     if x in used_letters:
         print('Already guessed letter, try again!')
         print(used_letters + '\n')
-
 
     # checking if letter is already in mysteryword
     if x in word:
@@ -49,9 +54,10 @@ def process_input():
 
     x = input('Enter a letter:\n')
     x = x.upper()
+    print(right_letters)
+    print(used_letters)
+    print(blanks)
     validate(x)
-    print(right_letters + '\n')
-    print(used_letters + '\n')
 
 # checks length of correct letters guessed with length of mysterword then prints win statement and exits game
 def is_right():
@@ -62,7 +68,7 @@ def is_right():
 
 # checks length of incorrect guesses then ends game when maximum reached
 def is_wrong():
-    if len(wrong_letters) >= 9:
+    if len(wrong_letters) >= 7:
         print('Departing back to Earth!')
         exit()
 
